@@ -1,7 +1,9 @@
 package dbernat.it.springmvc.core.services;
 
 import dbernat.it.springmvc.core.qualifiers.GuessCount;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,19 +15,21 @@ import javax.annotation.PreDestroy;
 @Component
 @Slf4j
 @Getter
-@Setter
 public class GameImpl implements Game
 {
-
+    @Getter(AccessLevel.NONE)
+    @NonNull
     private final NumberGenerator numberGenerator;
-    private final int guessCount;
 
+    private final int guessCount;
     private int number;
-    private int guess;
     private int smallest;
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+
+    @Setter
+    private int guess;
 
     @Autowired
     public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {

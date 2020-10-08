@@ -1,14 +1,13 @@
 package dbernat.it.springmvc.console;
 
 import dbernat.it.springmvc.core.config.AppConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class BootApp
+@Slf4j
+class BootApp
 {
-    private static final Logger log = LoggerFactory.getLogger(BootApp.class);
 
     public static void main(String[] args)
     {

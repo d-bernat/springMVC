@@ -2,6 +2,7 @@ package dbernat.it.springmvc.core.services;
 
 import dbernat.it.springmvc.core.qualifiers.MaxNumber;
 import dbernat.it.springmvc.core.qualifiers.MinNumber;
+import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,13 +10,13 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 @Component
-@Getter
 public class NumberGeneratorImpl implements NumberGenerator
 {
     private final Random random = new Random();
 
+    @Getter
     private final int maxNumber;
-
+    @Getter
     private final int minNumber;
 
     @Autowired

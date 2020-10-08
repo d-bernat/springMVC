@@ -1,5 +1,6 @@
 package dbernat.it.springmvc.core.services;
 
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,7 @@ import java.text.MessageFormat;
 @Slf4j
 public class MessageGeneratorImpl implements MessageGenerator
 {
+    @NonNull
     private final Game game;
 
     @Autowired
