@@ -1,4 +1,4 @@
-package dbernat.it.springmvc.services;
+package dbernat.it.springmvc.core.services;
 
 public interface Game {
     int getNumber();
@@ -7,6 +7,7 @@ public interface Game {
     int getSmallest();
     int getBiggest();
     int getRemainingGuesses();
+    int getGuessCount();
     void reset();
     void check();
     boolean isValidNumberRange();
