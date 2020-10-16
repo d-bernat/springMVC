@@ -9,6 +9,6 @@ public class AliveController
     @GetMapping("monitoring/alive")
     public String alive()
     {
-        return "I am ok, :-)";
+        return "I am OK, :-)";
     }
 }
