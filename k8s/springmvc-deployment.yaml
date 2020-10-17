@@ -16,4 +16,13 @@ spec:
       - name: springmvc
         image: dbernat/springmvc
         ports:
-          - containerPort: 8080
+          - name: app-port
+            containerPort: 7000
+        livenessProbe:
+          httpGet:
+            path: /actuator/info
+            port: 7000
+          initialDelaySeconds: 100
+          timeoutSeconds: 2
+          periodSeconds: 8
+          failureThreshold: 1

@@ -1,0 +1,30 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+server:
+  port: 7000
+
+management:
+  server:
+    port: 7000
+    address: 127.0.0.1
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
+    health:
+      show-details: always
+      defaults:
+          enabled: true
+      diskspace:
+          enabled: true
+
+info:
+  app:
+    name: '@project.build.finalName@'
+    version: '@project.version@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'

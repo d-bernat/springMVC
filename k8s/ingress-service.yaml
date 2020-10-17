@@ -13,4 +13,4 @@ spec:
           - path: /?(.*)
             backend:
               serviceName: springmvc-cluster-ip-service
-              servicePort: 8086
+              servicePort: 7000

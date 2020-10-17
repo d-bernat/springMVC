@@ -4,21 +4,23 @@ import dbernat.it.springmvc.core.qualifiers.GuessCount;
 import dbernat.it.springmvc.core.qualifiers.MaxNumber;
 import dbernat.it.springmvc.core.qualifiers.MinNumber;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "core.game")
 @ComponentScan(basePackages = "dbernat.it.springmvc")
-@PropertySource("classpath:config/game.properties")
 public class AppConfig
 {
-    @Value("${game.maxNumber:100}")
+    @Value("100")
     private int maxNumber;
-    @Value("${game.guessCount:5}")
+    @Value("5")
     private int guessCount;
-    @Value("${game.minNumber:0}")
+    @Value("20")
     private int minNumber;
 
 
@@ -42,4 +44,5 @@ public class AppConfig
     {
         return minNumber;
     }
+
 }

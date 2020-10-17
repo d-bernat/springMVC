@@ -11,10 +11,4 @@ public class AliveController
     {
         return "I am ok, :-)";
     }
-
-    @GetMapping("monitoring/health")
-    public String health()
-    {
-        return "I am healthy, ;-)";
-    }
 }

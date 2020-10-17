@@ -1,0 +1,5 @@
+core:
+  game:
+    maxNumber: 100
+    guessCount: 5
+    minNumber: 20
