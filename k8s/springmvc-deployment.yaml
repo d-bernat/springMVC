@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: springmvc-deployment
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+        component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+      - name: springmvc
+        image: dbernat/springmvc
+        ports:
+          - containerPort: 8080

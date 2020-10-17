@@ -15,6 +15,6 @@ public class AliveController
     @GetMapping("monitoring/health")
     public String health()
     {
-        return "I am healthy, :-)";
+        return "I am healthy, ;-)";
     }
 }
