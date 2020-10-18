@@ -1,0 +1,41 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  main:
+    log-startup-info: false
+  application:
+    redis:
+      url: redis://${REDIS_HOST}:${REDIS_PORT}
+  jackson:
+    property-naming-strategy: UPPER_CAMEL_CASE
+    serialization:
+      indent-output: false
+
+server:
+  port: 7000
+
+management:
+  server:
+    port: 7000
+    address: 127.0.0.1
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  health:
+    defaults:
+      enabled: true
+
+info:
+  app:
+    name: 'web-1.0-SNAPSHOT'
+    version: '1.0-SNAPSHOT'
+    encoding: 'UTF-8'
+    java:
+      version: '11.0.8'
