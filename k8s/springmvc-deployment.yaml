@@ -18,6 +18,11 @@ spec:
         ports:
           - name: app-port
             containerPort: 7000
+        env:
+          - name: REDIS_HOST
+            value: springmvc-redis-cluster-ip-service
+          - name: REDIS_PORT
+            value: '6379'
         livenessProbe:
           httpGet:
             path: /actuator/info

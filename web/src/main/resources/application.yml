@@ -2,6 +2,16 @@ spring:
   output:
     ansi:
       enabled: always
+  main:
+    log-startup-info: false
+  application:
+    redis:
+      url: redis://${REDIS_HOST}:${REDIS_PORT}
+  jackson:
+    property-naming-strategy: UPPER_CAMEL_CASE
+    serialization:
+      indent-output: false
+
 server:
   port: 7000
 
@@ -14,12 +24,13 @@ management:
       exposure:
         include: '*'
     enabled-by-default: true
+  endpoint:
     health:
       show-details: always
-      defaults:
-          enabled: true
-      diskspace:
-          enabled: true
+      show-components: always
+  health:
+    defaults:
+      enabled: true
 
 info:
   app:
