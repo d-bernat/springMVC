@@ -1,0 +1,7 @@
+<thlogic xmlns:th="http://www.thymeleaf.org">
+    <attr sel ="#headId"   th:replace="~{fragments/head::headFragment}"/>
+    <attr sel ="#footerId"  th:replace="~{fragments/footer::footerFragment}"/>
+    <attr sel ="#mainMessageId" th:text="${__${T(dbernat.it.springmvc.util.AttributeNames).MAIN_MESSAGE}__}"/>
+    <attr sel ="#resultMessageId" th:text="${__${T(dbernat.it.springmvc.util.AttributeNames).RESULT_MESSAGE}__}"/>
+    <attr sel ="#actionPlayId" th:action="@{__${T(dbernat.it.springmvc.util.GameMappings).PLAY}__}" />
+</thlogic>
