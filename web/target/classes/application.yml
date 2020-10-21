@@ -11,9 +11,15 @@ spring:
     property-naming-strategy: UPPER_CAMEL_CASE
     serialization:
       indent-output: false
-
+  mvc:
+    throw-exception-if-no-handler-found: true
+#    locale: de
+#    locale-resolver: fixed
 server:
   port: 7000
+  error:
+    whitelabel:
+      enabled: false
 
 management:
   server:
